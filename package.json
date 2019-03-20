@@ -1,0 +1,30 @@
+{
+  "name": "hexo-filter-mathjax",
+  "version": "0.0.1",
+  "description": "MathJax renderer plugin for Hexo",
+  "main": "index.js",
+  "dependencies": {
+    "mathjax-node-page": "^3.0.1",
+    "co": "^4.6.0"
+  },
+  "devDependencies": {
+    "hexo": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenjoezhang/hexo-filter-mathjax.git"
+  },
+  "keywords": [
+    "math",
+    "mathjax",
+    "renderer",
+    "hexo"
+  ],
+  "author": "Mimi <zsq@zsq.im> (https://zhangshuqiao.org)",
+  "readme": "https://github.com/stevenjoezhang/hexo-filter-mathjax/blob/master/README.md",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevenjoezhang/hexo-filter-mathjax/issues"
+  },
+  "homepage": "https://github.com/stevenjoezhang/hexo-filter-mathjax"
+}
