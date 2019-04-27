@@ -8,7 +8,7 @@
 **MathJax Renderer Plugin for Hexo**.  
 Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
 
-## INSTALL
+## Installation
 ```bash
 $ npm install hexo-filter-mathjax --save
 ```
@@ -17,6 +17,18 @@ Edit `_config.yml`:
 plugins:
   - hexo-filter-mathjax
 ```
+
+## Options
+
+You can configure this plugin in Hexo `_config.yml`. Default options:
+
+```yaml
+mathjax:
+  single_dollars: true
+  cjk_char_width: 16
+  svg: true
+```
+
 ## Sample
 
 Write the following latex code:
@@ -28,3 +40,6 @@ $$
 Then you will get:
 
 ![sample](sample.png)
+
+## License
+Released under the MIT License
