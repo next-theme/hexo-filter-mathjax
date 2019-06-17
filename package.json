@@ -8,7 +8,7 @@
     "co": "^4.6.0"
   },
   "devDependencies": {
-    "hexo": "3.8.0"
+    "hexo": "3.9.0"
   },
   "repository": {
     "type": "git",
