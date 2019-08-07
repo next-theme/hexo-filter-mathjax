@@ -2,7 +2,7 @@
 
 'use strict';
 
-var merge = require('utils-merge');
+const merge = require('lodash/merge');
 
 var config = hexo.config.mathjax = merge({
   single_dollars: true,
@@ -10,27 +10,20 @@ var config = hexo.config.mathjax = merge({
   svg: true
 }, hexo.config.mathjax);
 
-const co = require('co');
 const mjpage = require('mathjax-node-page/lib/main.js').mjpage;
 
-function renderMathjax(tex) {
-  return new Promise((resolve, reject) => {
-    mjpage(tex, {
-    	format: ["TeX"],
-    	singleDollars: config.single_dollars
-    }, {
-    	cjkCharWidth: config.cjk_char_width,
-    	svg: config.svg
-    }, function(output) {
-      resolve(output); // resulting HTML string
-    });
-  });
-}
-
 hexo.extend.filter.register('after_post_render', data => {
-	if (!data.mathjax) return;
-  return co(function *() {
-    data.content = yield renderMathjax(data.content);
-    return data;
+  if (!data.mathjax) return;
+  return new Promise((resolve, reject) => {
+    mjpage(data.content, {
+      format: ["TeX"],
+      singleDollars: config.single_dollars
+    }, {
+      cjkCharWidth: config.cjk_char_width,
+      svg: config.svg
+    }, function(output) {
+      data.content = output;
+      resolve(data); // resulting HTML string
+    });
   });
 }, 5);

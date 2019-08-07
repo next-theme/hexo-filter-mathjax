@@ -4,8 +4,7 @@
   "description": "MathJax renderer plugin for Hexo",
   "main": "index.js",
   "dependencies": {
-    "mathjax-node-page": "^3.0.1",
-    "co": "^4.6.0"
+    "mathjax-node-page": "^3.0.1"
   },
   "devDependencies": {
     "hexo": "3.9.0"
