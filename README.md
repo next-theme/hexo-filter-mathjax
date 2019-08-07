@@ -12,11 +12,6 @@ Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
 ```bash
 $ npm install hexo-filter-mathjax --save
 ```
-Edit `_config.yml`:
-```yaml
-plugins:
-  - hexo-filter-mathjax
-```
 
 ## Options
 
@@ -29,9 +24,25 @@ mathjax:
   svg: true
 ```
 
+## Usage
+
+Set `mathjax: true` in Front-matter of each article (post / page) that you would like to enable mathjax. Example:
+
+```md
+---
+title: Title
+categories: Physics
+date: 1984-01-24 16:00:00
+tags:
+mathjax: true
+---
+```
+
+Then you can use the LaTeX syntax in the article.
+
 ## Sample
 
-Write the following latex code:
+Write the following LaTeX code:
 ```
 $$
 \frac{\partial u}{\partial t} = h^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right)
