@@ -10,7 +10,7 @@ var config = hexo.config.mathjax = merge({
   svg: true
 }, hexo.config.mathjax);
 
-const mjpage = require('mathjax-node-page/lib/main.js').mjpage;
+const mjpage = require('mathjax-node-page').mjpage;
 
 hexo.extend.filter.register('after_post_render', data => {
   if (!data.mathjax) return;
