@@ -2,7 +2,7 @@
 
 'use strict';
 
-const merge = require('lodash/merge');
+const { merge } = require('lodash');
 
 var config = hexo.config.mathjax = merge({
   single_dollars: true,
@@ -10,7 +10,7 @@ var config = hexo.config.mathjax = merge({
   svg: true
 }, hexo.config.mathjax);
 
-const mjpage = require('mathjax-node-page').mjpage;
+const { mjpage } = require('mathjax-node-page');
 
 hexo.extend.filter.register('after_post_render', data => {
   if (!data.mathjax) return;
