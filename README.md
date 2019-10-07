@@ -1,9 +1,9 @@
 # Hexo Filter MathJax
 
-[![Npm Version](https://img.shields.io/npm/v/hexo-filter-mathjax.svg)](https://npmjs.org/package/hexo-filter-mathjax)
-[![Npm Downloads Month](https://img.shields.io/npm/dm/hexo-filter-mathjax.svg)](https://npmjs.org/package/hexo-filter-mathjax)
-[![Npm Downloads Total](https://img.shields.io/npm/dt/hexo-filter-mathjax.svg)](https://npmjs.org/package/hexo-filter-mathjax)
-[![License](https://img.shields.io/npm/l/hexo-filter-mathjax.svg)](https://npmjs.org/package/hexo-filter-mathjax)
+[![Npm Version](https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
+[![Npm Downloads Month](https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
+[![Npm Downloads Total](https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
+[![License](https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
 
 **MathJax Renderer Plugin for Hexo**.  
 Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
