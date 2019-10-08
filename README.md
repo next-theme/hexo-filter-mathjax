@@ -1,14 +1,17 @@
 # Hexo Filter MathJax
 
-[![Npm Version](https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
-[![Npm Downloads Month](https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
-[![Npm Downloads Total](https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
-[![License](https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square)](https://npmjs.org/package/hexo-filter-mathjax)
+[![npm-image]][npm-url]
+[![lic-image]](LICENSE)
 
 **MathJax Renderer Plugin for Hexo**.  
 Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
 
 ## Installation
+
+![size-image]
+[![dm-image]][npm-url]
+[![dt-image]][npm-url]
+
 ```bash
 $ npm install hexo-filter-mathjax --save
 ```
@@ -53,4 +56,14 @@ Then you will get:
 ![sample](sample.png)
 
 ## License
+
 Released under the MIT License
+
+[npm-image]: https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square
+[lic-image]: https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square
+
+[size-image]: https://img.shields.io/github/languages/code-size/stevenjoezhang/hexo-filter-mathjax?style=flat-square
+[dm-image]: https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square
+[dt-image]: https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square
+
+[npm-url]: https://www.npmjs.com/package/hexo-filter-mathjax
