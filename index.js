@@ -2,9 +2,7 @@
 
 'use strict';
 
-const { merge } = require('lodash');
-
-var config = hexo.config.mathjax = merge({
+var config = hexo.config.mathjax = Object.assign({
   single_dollars: true,
   cjk_char_width: 16,
   svg: true
