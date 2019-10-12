@@ -13,7 +13,7 @@ Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
 [![dt-image]][npm-url]
 
 ```bash
-$ npm install hexo-filter-mathjax --save
+$ npm install hexo-filter-mathjax
 ```
 
 ## Options
