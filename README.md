@@ -3,8 +3,7 @@
 [![npm-image]][npm-url]
 [![lic-image]](LICENSE)
 
-**MathJax Renderer Plugin for Hexo**.  
-Add support of [MathJax](http://www.mathjax.org/) for [Hexo](http://hexo.io/).
+Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/). No front-end scripts are required.
 
 ## Installation
 
