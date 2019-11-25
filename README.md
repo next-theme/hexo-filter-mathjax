@@ -3,7 +3,7 @@
 [![npm-image]][npm-url]
 [![lic-image]](LICENSE)
 
-Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/). No front-end scripts are required.
+Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/). **No front-end scripts and other Math plugins are required.**
 
 ## Installation
 
@@ -41,6 +41,11 @@ mathjax: true
 ```
 
 Then you can use the LaTeX syntax in the article.
+
+### Renderer
+
+If you are using `hexo-renderer-marked`, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
+`$\epsilon_0$`->`$\epsilon\_0$`
 
 ## Sample
 
