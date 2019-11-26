@@ -3,12 +3,6 @@
   "version": "0.1.2",
   "description": "Server side MathJax renderer plugin for Hexo.",
   "main": "index.js",
-  "dependencies": {
-    "mathjax-node-page": "^3.2.0"
-  },
-  "devDependencies": {
-    "hexo": "4.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/stevenjoezhang/hexo-filter-mathjax.git"
@@ -25,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/stevenjoezhang/hexo-filter-mathjax/issues"
   },
-  "homepage": "https://github.com/stevenjoezhang/hexo-filter-mathjax"
+  "homepage": "https://github.com/stevenjoezhang/hexo-filter-mathjax",
+  "dependencies": {
+    "mathjax-node-page": "3.2.0"
+  },
+  "devDependencies": {
+    "hexo": "4.0.0"
+  }
 }
