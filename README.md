@@ -3,7 +3,9 @@
 [![npm-image]][npm-url]
 [![lic-image]](LICENSE)
 
-Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/). **No front-end scripts and other Math plugins are required.**
+Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/).
+
+**WARNING: No front-end scripts and other Math plugins are required. Remove them ALL before using this plugin.**
 
 ## Installation
 
@@ -45,19 +47,31 @@ Then you can use the LaTeX syntax in the article.
 ### Renderer
 
 If you are using `hexo-renderer-marked`, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
-`$\epsilon_0$` → `$\epsilon\_0$`
+`$\epsilon_0$` → `$\epsilon\_0$`  
+`\begin{eqnarray*}` → `\begin{eqnarray\*}`
 
 ## Sample
 
 Write the following LaTeX code:
 ```
 $$
-\frac{\partial u}{\partial t} = h^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right)
+i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
 $$
 ```
 Then you will get:
 
-![sample](sample.png)
+![](sample1.svg)
+
+```
+\begin{eqnarray\*}
+\nabla\cdot\vec{E}&=&\frac{\rho}{\epsilon_0}\\\\
+\nabla\cdot\vec{B}&=&0\\\\
+\nabla\times\vec{E}&=&-\frac{\partial B}{\partial t}\\\\
+\nabla\times\vec{B}&=&\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\\\
+\end{eqnarray\*}
+```
+
+![](sample2.svg)
 
 ## License
 
