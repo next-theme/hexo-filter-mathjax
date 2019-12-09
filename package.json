@@ -24,6 +24,6 @@
     "mathjax-node-page": "3.2.0"
   },
   "devDependencies": {
-    "hexo": "4.0.0"
+    "hexo": "4.1.0"
   }
 }
