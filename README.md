@@ -24,8 +24,7 @@ You can configure this plugin in Hexo `_config.yml`. Default options:
 ```yaml
 mathjax:
   single_dollars: true
-  cjk_char_width: 16
-  svg: true
+  ex_factor: 0.5
 ```
 
 ## Usage
