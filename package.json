@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/stevenjoezhang/hexo-filter-mathjax",
   "dependencies": {
-    "mathjax-node-page": "3.2.0"
+    "mathjax-full": "3.0.1"
   },
   "devDependencies": {
     "hexo": "4.2.0"
