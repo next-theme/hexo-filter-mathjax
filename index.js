@@ -26,22 +26,22 @@ const adaptor = liteAdaptor({
 });
 RegisterHTMLHandler(adaptor);
 
-//
-//  Create input and output jax and a document using them on the content from the HTML file
-//
-const tex = new TeX({
-  packages  : AllPackages,
-  inlineMath: config.single_dollars ? {
-    '[+]': [['$', '$']]
-  } : {}
-});
-const svg = new SVG({
-  fontCache: 'global',
-  exFactor : config.ex_factor
-});
-
 hexo.extend.filter.register('after_post_render', data => {
   if (!data.mathjax) return;
+
+  //
+  //  Create input and output jax and a document using them on the content from the HTML file
+  //
+  const tex = new TeX({
+    packages  : AllPackages,
+    inlineMath: config.single_dollars ? {
+      '[+]': [['$', '$']]
+    } : {}
+  });
+  const svg = new SVG({
+    fontCache: 'global',
+    exFactor : config.ex_factor
+  });
   const html = mathjax.document(data.content, {
     InputJax : tex,
     OutputJax: svg
