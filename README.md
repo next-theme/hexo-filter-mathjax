@@ -23,6 +23,7 @@ You can configure this plugin in Hexo `_config.yml`. Default options:
 
 ```yaml
 mathjax:
+  tags: none # or 'ams' or 'all'
   single_dollars: true
   ex_factor: 0.5
 ```

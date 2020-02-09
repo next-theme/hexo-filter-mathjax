@@ -3,6 +3,7 @@
 'use strict';
 
 var config = hexo.config.mathjax = Object.assign({
+  tags          : 'none',
   single_dollars: true,
   ex_factor     : 0.5
 }, hexo.config.mathjax);
@@ -34,6 +35,7 @@ hexo.extend.filter.register('after_post_render', data => {
   //
   const tex = new TeX({
     packages  : AllPackages,
+    tags      : config.tags,
     inlineMath: config.single_dollars ? {
       '[+]': [['$', '$']]
     } : {}
