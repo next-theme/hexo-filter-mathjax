@@ -107,3 +107,11 @@ foreignObject[data-mjx-xml] {
 .MathJax path {
   stroke-width: 3;
 }
+
+mjx-container {
+  overflow: auto hidden;
+}
+
+mjx-container + br {
+  display: none;
+}
