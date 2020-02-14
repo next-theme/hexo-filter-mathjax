@@ -37,7 +37,7 @@ Set `mathjax: true` in Front-matter of each article (post / page) that you would
 title: Title
 categories: Physics
 date: 1984-01-24 16:00:00
-tags:
+tags: General relativity
 mathjax: true
 ---
 ```
@@ -46,7 +46,7 @@ Then you can use the LaTeX syntax in the article.
 
 ### Renderer
 
-If you are using `hexo-renderer-marked`, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
+`hexo-renderer-pandoc` is recommended because it can handle mathematical formulas in markdown documents perfectly. If you are using other renderers, such as `hexo-renderer-marked`, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
 `$\epsilon_0$` → `$\epsilon\_0$`  
 `\begin{eqnarray*}` → `\begin{eqnarray\*}`
 
