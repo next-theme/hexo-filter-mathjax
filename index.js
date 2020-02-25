@@ -2,10 +2,13 @@
 
 'use strict';
 
+const stringWidth = require("string-width");
+
 var config = hexo.config.mathjax = Object.assign({
   tags          : 'none',
   single_dollars: true,
-  ex_factor     : 0.5
+  cjkWidth      : 0.9,
+  normalWidth   : 0.6
 }, hexo.config.mathjax);
 
 //
@@ -22,11 +25,31 @@ const { AllPackages } = require('mathjax-full/js/input/tex/AllPackages.js');
 //
 //  Create DOM adaptor and register it for HTML documents
 //
-LiteAdaptor.prototype.value = function(node) {
-  return node.value;
+class myAdaptor extends LiteAdaptor {
+  value(node) {
+    return node.value;
+  }
+  nodeSize(node) {
+    const cjk = this.options.cjkWidth;
+    const width = this.options.normalWidth;
+    const text = this.textContent(node);
+    let w = 0;
+    for (const c of text.split("")) {
+      w += (stringWidth(c) === 2 ? cjk : width);
+    }
+    return [w, 0];
+  }
+}
+myAdaptor.OPTIONS = {
+  ...LiteAdaptor.OPTIONS,
+  cjkWidth   : 0.9,
+  normalWidth: 0.6
 };
-const adaptor = new LiteAdaptor({
-  fontSize: 16
+
+const adaptor = new myAdaptor({
+  fontSize   : 16,
+  cjkWidth   : config.cjkWidth,
+  normalWidth: config.normalWidth
 });
 RegisterHTMLHandler(adaptor);
 
@@ -44,8 +67,7 @@ hexo.extend.filter.register('after_post_render', data => {
     } : {}
   });
   const svg = new SVG({
-    fontCache: 'global',
-    exFactor : config.ex_factor
+    fontCache: 'global'
   });
   const html = mathjax.document(data.content, {
     InputJax : tex,

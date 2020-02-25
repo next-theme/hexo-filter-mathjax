@@ -24,8 +24,9 @@ You can configure this plugin in Hexo `_config.yml`. Default options:
 ```yaml
 mathjax:
   tags: none # or 'ams' or 'all'
-  single_dollars: true
-  ex_factor: 0.5
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjkWidth: 0.9 # the default CJK width
+  normalWidth: 0.6 # the default normal (monospace) width
 ```
 
 ## Usage
