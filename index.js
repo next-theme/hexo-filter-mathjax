@@ -7,8 +7,8 @@ const stringWidth = require("string-width");
 var config = hexo.config.mathjax = Object.assign({
   tags          : 'none',
   single_dollars: true,
-  cjkWidth      : 0.9,
-  normalWidth   : 0.6
+  cjk_width     : 0.9,
+  normal_width  : 0.6
 }, hexo.config.mathjax);
 
 //
@@ -48,8 +48,8 @@ myAdaptor.OPTIONS = {
 
 const adaptor = new myAdaptor({
   fontSize   : 16,
-  cjkWidth   : config.cjkWidth,
-  normalWidth: config.normalWidth
+  cjkWidth   : config.cjk_width,
+  normalWidth: config.normal_width
 });
 RegisterHTMLHandler(adaptor);
 
