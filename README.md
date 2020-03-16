@@ -47,7 +47,7 @@ Then you can use the LaTeX syntax in the article.
 
 ### Renderer
 
-`hexo-renderer-pandoc` is recommended because it can handle mathematical formulas in markdown documents perfectly. If you are using other renderers, such as `hexo-renderer-marked`, you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
+[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
 `$\epsilon_0$` → `$\epsilon\_0$`  
 `\begin{eqnarray*}` → `\begin{eqnarray\*}`
 
