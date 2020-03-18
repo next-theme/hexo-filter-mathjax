@@ -35,10 +35,9 @@ Set `mathjax: true` in Front-matter of each article (post / page) that you would
 
 ```md
 ---
-title: Title
+title: On the Electrodynamics of Moving Bodies
 categories: Physics
-date: 1984-01-24 16:00:00
-tags: General relativity
+date: 1905-06-30 12:00:00
 mathjax: true
 ---
 ```
@@ -47,7 +46,11 @@ Then you can use the LaTeX syntax in the article.
 
 ### Renderer
 
-[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. For example, you need to use `\` to escape:  
+[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`**. For example:  
+`$ \epsilon_0 $` → `$\epsilon_0$`  
+`$ \frac{\partial}{\partial t} $` → `$\frac{\partial}{\partial t}$`
+
+If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. Use `\` to escape if necessary:  
 `$\epsilon_0$` → `$\epsilon\_0$`  
 `\begin{eqnarray*}` → `\begin{eqnarray\*}`
 
