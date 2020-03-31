@@ -31,7 +31,7 @@ mathjax:
 
 ## Usage
 
-Set `mathjax: true` in Front-matter of each article (post / page) that you would like to enable mathjax. Example:
+Set `mathjax: true` in Front-matter of each article (post / page) that you would like to enable mathjax. For example:
 
 ```md
 ---
@@ -62,9 +62,6 @@ $$
 i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
 $$
 ```
-Then you will get:
-
-![](sample1.svg)
 
 ```
 \begin{eqnarray\*}
@@ -74,6 +71,10 @@ Then you will get:
 \nabla\times\vec{B}&=&\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\\\
 \end{eqnarray\*}
 ```
+
+Then you will get:
+
+![](sample1.svg)
 
 ![](sample2.svg)
 

@@ -2,9 +2,9 @@
 
 'use strict';
 
-const stringWidth = require("string-width");
+const stringWidth = require('string-width');
 
-var config = hexo.config.mathjax = Object.assign({
+const config = hexo.config.mathjax = Object.assign({
   tags          : 'none',
   single_dollars: true,
   cjk_width     : 0.9,
@@ -34,7 +34,7 @@ class myAdaptor extends LiteAdaptor {
     const width = this.options.normalWidth;
     const text = this.textContent(node);
     let w = 0;
-    for (const c of text.split("")) {
+    for (const c of text.split('')) {
       w += (stringWidth(c) === 2 ? cjk : width);
     }
     return [w, 0];
