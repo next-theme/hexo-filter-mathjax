@@ -85,7 +85,7 @@ Released under the MIT License
 [npm-image]: https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square
 [lic-image]: https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square
 
-[size-image]: https://img.shields.io/github/languages/code-size/hexo-next/hexo-filter-mathjax?style=flat-square
+[size-image]: https://img.shields.io/github/languages/code-size/next-theme/hexo-filter-mathjax?style=flat-square
 [dm-image]: https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square
 [dt-image]: https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square
 

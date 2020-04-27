@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hexo-next/hexo-filter-mathjax.git"
+    "url": "https://github.com/next-theme/hexo-filter-mathjax.git"
   },
   "keywords": [
     "math",
@@ -14,12 +14,12 @@
     "hexo"
   ],
   "author": "Mimi <stevenjoezhang@gmail.com> (https://zhangshuqiao.org)",
-  "readme": "https://github.com/hexo-next/hexo-filter-mathjax/blob/master/README.md",
+  "readme": "https://github.com/next-theme/hexo-filter-mathjax/blob/master/README.md",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hexo-next/hexo-filter-mathjax/issues"
+    "url": "https://github.com/next-theme/hexo-filter-mathjax/issues"
   },
-  "homepage": "https://github.com/hexo-next/hexo-filter-mathjax",
+  "homepage": "https://github.com/next-theme/hexo-filter-mathjax",
   "dependencies": {
     "mathjax-full": "3.0.5",
     "string-width": "4.2.0"
