@@ -27,6 +27,7 @@ mathjax:
   single_dollars: true # enable single dollar signs as in-line math delimiters
   cjk_width: 0.9 # relative CJK char width
   normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to every page
 ```
 
 ## Usage
