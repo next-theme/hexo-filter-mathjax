@@ -7,7 +7,7 @@ const config = hexo.config.mathjax = Object.assign({
   single_dollars: true,
   cjk_width     : 0.9,
   normal_width  : 0.6,
-  append_css:   true
+  append_css    : true
 }, hexo.config.mathjax);
 
 const mathjax = require('./lib/filter')(config);
