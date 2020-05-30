@@ -47,13 +47,21 @@ Then you can use the LaTeX syntax in the article.
 
 ### Renderer
 
-[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`**. For example:  
-`$ \epsilon_0 $` → `$\epsilon_0$`  
-`$ \frac{\partial}{\partial t} $` → `$\frac{\partial}{\partial t}$`
+[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`**. For example:
+```diff
+-$ \epsilon_0 $
++$\epsilon_0$
+-$ \frac{\partial}{\partial t} $
++$\frac{\partial}{\partial t}$
+```
 
-If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. Use `\` to escape if necessary:  
-`$\epsilon_0$` → `$\epsilon\_0$`  
-`\begin{eqnarray*}` → `\begin{eqnarray\*}`
+If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. Use `\` to escape if necessary:
+```diff
+-$\epsilon_0$
++$\epsilon\_0$
+-\begin{eqnarray*}
++\begin{eqnarray\*}
+```
 
 ## Sample
 
