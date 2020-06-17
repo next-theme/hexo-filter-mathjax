@@ -108,10 +108,10 @@ foreignObject[data-mjx-xml] {
   stroke-width: 3;
 }
 
-mjx-container {
+mjx-container[display="true"] {
   overflow: auto hidden;
 }
 
-mjx-container + br {
+mjx-container[display="true"] + br {
   display: none;
 }
