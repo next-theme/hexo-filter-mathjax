@@ -15,6 +15,7 @@ Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http:/
 
 ```bash
 $ npm install hexo-filter-mathjax
+$ hexo clean
 ```
 
 ## Options
