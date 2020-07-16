@@ -24,6 +24,9 @@ if (config.append_css) {
   const css = require('./lib/css');
 
   hexo.extend.filter.register('after_render:html', data => {
-    return data.replace(/<head>(?!<\/head>).+?<\/head>/s, str => str.replace('</head>', `<style>${css}</style></head>`));
+    // add unique token to prevent replacing repeatedly
+    if (data.match(`<meta name="hexo-filter-mathjax-css" content="placeholder">`)) return;
+    return data.replace(/<head>(?!<\/head>).+?<\/head>/s, str => str.replace('</head>',
+          `<meta name="hexo-filter-mathjax-css" content="placeholder"> <style>${css}</style></head>`));
   });
 }
