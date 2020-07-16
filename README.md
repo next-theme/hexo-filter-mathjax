@@ -29,6 +29,7 @@ mathjax:
   cjk_width: 0.9 # relative CJK char width
   normal_width: 0.6 # relative normal (monospace) width
   append_css: true # add CSS to every page
+  every_page: false # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article
 ```
 
 ## Usage
