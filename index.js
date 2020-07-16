@@ -8,13 +8,13 @@ const config = hexo.config.mathjax = Object.assign({
   cjk_width     : 0.9,
   normal_width  : 0.6,
   append_css    : true,
-  enable_every_page :false
+  every_page    : false
 }, hexo.config.mathjax);
 
 const mathjax = require('./lib/filter')(config);
 
 hexo.extend.filter.register('after_post_render', data => {
-  if (!data.mathjax && !config.enable_every_page) return;
+  if (!data.mathjax && !config.every_page) return;
 
   data.content = mathjax(data.content);
   return data;
