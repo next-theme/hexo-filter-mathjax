@@ -3,12 +3,12 @@
 require('chai').should();
 
 const config = {
-  tags: 'none',
+  tags          : 'none',
   single_dollars: true,
-  cjk_width: 0.9,
-  normal_width: 0.6,
-  append_css: true,
-  every_page: false
+  cjk_width     : 0.9,
+  normal_width  : 0.6,
+  append_css    : true,
+  every_page    : false
 };
 
 const mathjax = require('../lib/filter')(config);
