@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/next-theme/hexo-filter-mathjax",
   "dependencies": {
-    "mathjax-full": "3.1.0",
+    "mathjax-full": "3.1.2",
     "string-width": "4.2.0"
   },
   "devDependencies": {
