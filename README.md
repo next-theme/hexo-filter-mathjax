@@ -57,12 +57,14 @@ Then you can use the LaTeX syntax in the article.
 +$\frac{\partial}{\partial t}$
 ```
 
-If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. Use `\` to escape if necessary:
+If you are using other renderers, such as [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked), you need to be aware of the conflict between LaTeX and Markdown syntax. For example, an underscore (`_`) may be interpreted as the start of italic text in Markdown, or subscripted mark in TeX. Use `\` to escape if necessary:
 ```diff
 -$\epsilon_0$
 +$\epsilon\_0$
 -\begin{eqnarray*}
 +\begin{eqnarray\*}
+-\\
++\\\\
 ```
 
 ## Sample
