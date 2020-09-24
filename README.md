@@ -28,13 +28,13 @@ mathjax:
   single_dollars: true # enable single dollar signs as in-line math delimiters
   cjk_width: 0.9 # relative CJK char width
   normal_width: 0.6 # relative normal (monospace) width
-  append_css: true # add CSS to every page
-  every_page: false # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
 ```
 
 ## Usage
 
-Set `mathjax: true` in Front-matter of each article (post / page) that you would like to enable mathjax. For example:
+Set `mathjax: true` in Front-matter of each article (post / page) that you would like to enable MathJax. For example:
 
 ```md
 ---
