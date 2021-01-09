@@ -1,15 +1,12 @@
 {
   "name": "hexo-filter-mathjax",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Server side MathJax renderer plugin for Hexo.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/next-theme/hexo-filter-mathjax.git"
-  },
+  "repository": "next-theme/hexo-filter-mathjax",
   "keywords": [
     "math",
     "mathjax",
