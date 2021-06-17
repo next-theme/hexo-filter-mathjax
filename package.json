@@ -1,6 +1,6 @@
 {
   "name": "hexo-filter-mathjax",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Server side MathJax renderer plugin for Hexo.",
   "main": "index.js",
   "scripts": {
