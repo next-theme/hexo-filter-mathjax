@@ -5,7 +5,10 @@
 
 Server side [MathJax](http://www.mathjax.org/) Renderer Plugin for [Hexo](http://hexo.io/).
 
-**WARNING: No front-end scripts and other Math plugins are required. Remove them ALL before using this plugin.**
+**WARNING: This plugin is a server-side math rendering plugin, which does not depend on any front-end scripts. If you have already enabled other math rendering methods before installing this plugin, please do the following to avoid conflicts:**
+- Remove all other Hexo math plugins
+- Disable front-end math renderer in Hexo theme settings (For theme NexT, you need to set both `math.mathjax.enable` and `math.katax.enable` to `false`)
+- Delete front-end scripts related to math rendering
 
 ## Installation
 
