@@ -11,7 +11,7 @@ const config = {
   every_page       : false,
   extension_options: {
     macros: {
-      Rarr: "\\Rightarrow"
+      Rarr: '\\Rightarrow'
     }
   }
 };
@@ -19,7 +19,7 @@ const config = {
 const mathjax = require('../lib/filter')(config);
 const content = '$E=mc^2$';
 const comment = '<!-- more -->';
-const macros = "A \vee B \Rarr A"
+const macros = 'A \vee B \Rarr A';
 
 describe('MathJax', () => {
 
