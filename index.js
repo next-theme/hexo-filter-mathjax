@@ -3,12 +3,13 @@
 'use strict';
 
 const config = hexo.config.mathjax = Object.assign({
-  tags          : 'none',
-  single_dollars: true,
-  cjk_width     : 0.9,
-  normal_width  : 0.6,
-  append_css    : true,
-  every_page    : false
+  tags             : 'none',
+  single_dollars   : true,
+  cjk_width        : 0.9,
+  normal_width     : 0.6,
+  append_css       : true,
+  every_page       : false,
+  extension_options: {}
 }, hexo.config.mathjax);
 
 const mathjax = require('./lib/filter')(config);
