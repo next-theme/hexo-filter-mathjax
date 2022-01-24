@@ -97,6 +97,10 @@ Then you will get:
 
 ![](sample2.svg)
 
+## Known Issues
+
+Long equations with labels may cause horizontal overflow, because a `min-width` CSS property will be added to `mjx-container` elements by MathJax.
+
 ## License
 
 Released under the MIT License
