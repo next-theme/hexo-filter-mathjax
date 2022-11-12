@@ -94,9 +94,17 @@ $$
 
 Then you will get:
 
-![](sample1.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/sample1-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/sample1-light.svg">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="assets/sample1-light.svg">
+</picture>
 
-![](sample2.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/sample2-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/sample2-light.svg">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="assets/sample2-light.svg">
+</picture>
 
 ## Known Issues
 
