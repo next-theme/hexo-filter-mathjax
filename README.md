@@ -99,7 +99,7 @@ Then you will get:
   <source media="(prefers-color-scheme: light)" srcset="assets/sample1-light.svg">
   <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="assets/sample1-light.svg">
 </picture>
-
+<br>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/sample2-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/sample2-light.svg">
