@@ -19,7 +19,7 @@ const config = {
 const mathjax = require('../lib/filter')(config);
 const content = '$E=mc^2$';
 const comment = '<!-- more -->';
-const macros = 'A \vee B \Rarr A';
+const macros = '$A \\vee B \\Rarr A$';
 
 describe('MathJax', () => {
 
@@ -29,5 +29,9 @@ describe('MathJax', () => {
 
   it('comment', () => {
     mathjax(`${content}\n${comment}\n${content}`).should.include(comment);
+  });
+
+  it('macro', () => {
+    mathjax(`${macros}`).should.not.include('fill="red"');
   });
 });
