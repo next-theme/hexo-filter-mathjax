@@ -24,7 +24,7 @@
     "mathjax-full": "3.2.2"
   },
   "devDependencies": {
-    "chai": "4.3.6",
+    "chai": "4.4.1",
     "mocha": "10.0.0"
   }
 }
