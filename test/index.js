@@ -34,4 +34,14 @@ describe('MathJax', () => {
   it('macro', () => {
     mathjax(`${macros}`).should.not.include('fill="red"');
   });
+
+  it('cjk', () => {
+    mathjax(`$$\\mu(n)=
+\\begin{cases}
+1 & n是偶数个不同的素数相乘\\\\
+-1 & n是奇数个不同的素数相乘\\\\
+0 & n被某个素数的平方整除
+\\end{cases}
+$$`).should.include('svg');
+  });
 });
