@@ -114,11 +114,11 @@ Long equations with labels may cause horizontal overflow, because a `min-width` 
 
 Released under the MIT License
 
-[npm-image]: https://img.shields.io/npm/v/hexo-filter-mathjax?style=flat-square
-[lic-image]: https://img.shields.io/npm/l/hexo-filter-mathjax?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/hexo-filter-mathjax?style=for-the-badge
+[lic-image]: https://img.shields.io/npm/l/hexo-filter-mathjax?style=for-the-badge
 
-[size-image]: https://img.shields.io/github/languages/code-size/next-theme/hexo-filter-mathjax?style=flat-square
-[dm-image]: https://img.shields.io/npm/dm/hexo-filter-mathjax?style=flat-square
-[dt-image]: https://img.shields.io/npm/dt/hexo-filter-mathjax?style=flat-square
+[size-image]: https://img.shields.io/github/languages/code-size/next-theme/hexo-filter-mathjax?style=for-the-badge
+[dm-image]: https://img.shields.io/npm/dm/hexo-filter-mathjax?style=for-the-badge
+[dt-image]: https://img.shields.io/npm/dt/hexo-filter-mathjax?style=for-the-badge
 
 [npm-url]: https://www.npmjs.com/package/hexo-filter-mathjax
