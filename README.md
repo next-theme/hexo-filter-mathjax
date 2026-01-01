@@ -56,7 +56,7 @@ Then you can use the LaTeX syntax in the article.
 
 ### Renderer
 
-[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`**. For example:
+[hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) is recommended because it can handle mathematical formulas in markdown documents perfectly. But you need to be aware that for some specific versions of Pandoc, you may need to **add or remove** whitespace **after the opening `$` and before the closing `$`** for formulas to render correctly. Therefore, if the rendering is incorrect, please try adjusting the syntax. For example:
 ```diff
 -$ \epsilon_0 $
 +$\epsilon_0$
