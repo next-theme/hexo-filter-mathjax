@@ -17,9 +17,39 @@ const config = {
 };
 
 const mathjax = require('../lib/filter')(config);
+const mathjaxWithRequire = require('../lib/filter')(Object.assign({}, config, {
+  packages: ['require']
+}));
+const mathjaxWithRequireObject = require('../lib/filter')(Object.assign({}, config, {
+  packages: {
+    '[+]': ['require']
+  }
+}));
+const mathjaxWithPhysics = require('../lib/filter')(Object.assign({}, config, {
+  packages: ['physics']
+}));
+const mathjaxWithAmsTags = require('../lib/filter')(Object.assign({}, config, {
+  tags: 'ams'
+}));
+const mathjaxWithRequireNoPhysics = require('../lib/filter')(Object.assign({}, config, {
+  packages         : ['require'],
+  extension_options: {
+    require: {
+      allow: {
+        physics: false
+      }
+    }
+  }
+}));
+const mathjaxWithMacros = require('../lib/filter')(Object.assign({}, config, {
+  extension_options: {
+    macros: {
+      Rarr: '\\Rightarrow'
+    }
+  }
+}));
 const content = '$E=mc^2$';
 const comment = '<!-- more -->';
-const macros = '$A \\vee B \\Rarr A$';
 
 describe('MathJax', () => {
 
@@ -32,7 +62,48 @@ describe('MathJax', () => {
   });
 
   it('macro', () => {
-    // mathjax(`${macros}`).should.not.include('Undefined control sequence');
+    const macros = '$A \\vee B \\Rarr A$';
+    mathjaxWithMacros(macros).should.not.include('Undefined control sequence');
+  });
+
+  it('require', () => {
+    const macros = '$\\require{enclose}\\enclose{circle}{x}$';
+    mathjaxWithRequire(macros).should.include('svg');
+    mathjaxWithRequire(macros).should.not.include('data-mjx-error');
+  });
+
+  it('require loads packages locally', () => {
+    mathjaxWithRequire('$\\qty(x)$').should.include('Undefined control sequence');
+    mathjaxWithRequire('$\\require{physics}\\qty(x)$').should.not.include('Undefined control sequence');
+    mathjaxWithRequire('$\\qty(x)$').should.include('Undefined control sequence');
+  });
+
+  it('require loads package dependencies', () => {
+    mathjaxWithRequire('$\\require{cancel}\\cancel{x}$').should.not.include('data-mjx-error');
+  });
+
+  it('require runs package preprocessors', () => {
+    mathjaxWithRequire('$\\require{textcomp}\\text{a \\bf b}$').should.not.include('data-mjx-error');
+  });
+
+  it('require supports MathJax package append syntax', () => {
+    mathjaxWithRequireObject('$\\require{enclose}\\enclose{circle}{x}$').should.not.include('data-mjx-error');
+  });
+
+  it('packages load global extensions', () => {
+    mathjaxWithPhysics('$\\qty(x)$').should.not.include('Undefined control sequence');
+  });
+
+  it('ams tags load the ams package', () => {
+    mathjaxWithAmsTags('$$x=1$$').should.not.include('Unknown tags class');
+  });
+
+  it('loads dynamic svg fonts', () => {
+    mathjax('$\\mathbb{R} \\quad \\mathcal{L}$').should.not.include('data-mjx-error');
+  });
+
+  it('require respects extension options', () => {
+    mathjaxWithRequireNoPhysics('$\\require{physics}\\qty(x)$').should.include('not allowed');
   });
 
   it('cjk', () => {
