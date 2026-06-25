@@ -17,9 +17,6 @@ const config = {
 };
 
 const mathjax = require('../lib/filter')(config);
-const mathjaxWithRequire = require('../lib/filter')(Object.assign({}, config, {
-  packages: ['require']
-}));
 const mathjaxWithRequireObject = require('../lib/filter')(Object.assign({}, config, {
   packages: {
     '[+]': ['require']
@@ -32,7 +29,6 @@ const mathjaxWithAmsTags = require('../lib/filter')(Object.assign({}, config, {
   tags: 'ams'
 }));
 const mathjaxWithRequireNoPhysics = require('../lib/filter')(Object.assign({}, config, {
-  packages         : ['require'],
   extension_options: {
     require: {
       allow: {
@@ -68,22 +64,22 @@ describe('MathJax', () => {
 
   it('require', () => {
     const macros = '$\\require{enclose}\\enclose{circle}{x}$';
-    mathjaxWithRequire(macros).should.include('svg');
-    mathjaxWithRequire(macros).should.not.include('data-mjx-error');
+    mathjax(macros).should.include('svg');
+    mathjax(macros).should.not.include('data-mjx-error');
   });
 
   it('require loads packages locally', () => {
-    mathjaxWithRequire('$\\qty(x)$').should.include('Undefined control sequence');
-    mathjaxWithRequire('$\\require{physics}\\qty(x)$').should.not.include('Undefined control sequence');
-    mathjaxWithRequire('$\\qty(x)$').should.include('Undefined control sequence');
+    mathjax('$\\qty(x)$').should.include('Undefined control sequence');
+    mathjax('$\\require{physics}\\qty(x)$').should.not.include('Undefined control sequence');
+    mathjax('$\\qty(x)$').should.include('Undefined control sequence');
   });
 
   it('require loads package dependencies', () => {
-    mathjaxWithRequire('$\\require{cancel}\\cancel{x}$').should.not.include('data-mjx-error');
+    mathjax('$\\require{cancel}\\cancel{x}$').should.not.include('data-mjx-error');
   });
 
   it('require runs package preprocessors', () => {
-    mathjaxWithRequire('$\\require{textcomp}\\text{a \\bf b}$').should.not.include('data-mjx-error');
+    mathjax('$\\require{textcomp}\\text{a \\bf b}$').should.not.include('data-mjx-error');
   });
 
   it('require supports MathJax package append syntax', () => {
