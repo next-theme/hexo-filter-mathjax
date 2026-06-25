@@ -49,66 +49,74 @@ const comment = '<!-- more -->';
 
 describe('MathJax', () => {
 
-  it('default', () => {
-    mathjax(content).should.include('svg');
+  it('default', async () => {
+    (await mathjax(content)).should.include('svg');
   });
 
-  it('comment', () => {
-    mathjax(`${content}\n${comment}\n${content}`).should.include(comment);
+  it('comment', async () => {
+    (await mathjax(`${content}\n${comment}\n${content}`)).should.include(comment);
   });
 
-  it('macro', () => {
+  it('macro', async () => {
     const macros = '$A \\vee B \\Rarr A$';
-    mathjaxWithMacros(macros).should.not.include('Undefined control sequence');
+    (await mathjaxWithMacros(macros)).should.not.include('Undefined control sequence');
   });
 
-  it('require', () => {
+  it('require', async () => {
     const macros = '$\\require{enclose}\\enclose{circle}{x}$';
-    mathjax(macros).should.include('svg');
-    mathjax(macros).should.not.include('data-mjx-error');
+    (await mathjax(macros)).should.include('svg');
+    (await mathjax(macros)).should.not.include('data-mjx-error');
   });
 
-  it('require loads packages locally', () => {
-    mathjax('$\\qty(x)$').should.include('Undefined control sequence');
-    mathjax('$\\require{physics}\\qty(x)$').should.not.include('Undefined control sequence');
-    mathjax('$\\qty(x)$').should.include('Undefined control sequence');
+  it('require loads packages locally', async () => {
+    (await mathjax('$\\qty(x)$')).should.include('Undefined control sequence');
+    (await mathjax('$\\require{physics}\\qty(x)$')).should.not.include('Undefined control sequence');
+    (await mathjax('$\\qty(x)$')).should.include('Undefined control sequence');
   });
 
-  it('require loads package dependencies', () => {
-    mathjax('$\\require{cancel}\\cancel{x}$').should.not.include('data-mjx-error');
+  it('require loads package dependencies', async () => {
+    (await mathjax('$\\require{cancel}\\cancel{x}$')).should.not.include('data-mjx-error');
   });
 
-  it('require runs package preprocessors', () => {
-    mathjax('$\\require{textcomp}\\text{a \\bf b}$').should.not.include('data-mjx-error');
+  it('require runs package preprocessors', async () => {
+    (await mathjax('$\\require{textcomp}\\text{a \\bf b}$')).should.not.include('data-mjx-error');
   });
 
-  it('require supports MathJax package append syntax', () => {
-    mathjaxWithRequireObject('$\\require{enclose}\\enclose{circle}{x}$').should.not.include('data-mjx-error');
+  it('autoloads MathJax packages', async () => {
+    (await mathjax('$\\color{red}{x} \\quad \\verb|x| \\quad \\cancel{x}$')).should.not.include('data-mjx-error');
   });
 
-  it('packages load global extensions', () => {
-    mathjaxWithPhysics('$\\qty(x)$').should.not.include('Undefined control sequence');
+  it('autoloads MathJax font extensions', async () => {
+    (await mathjax('$\\ce{C6H5-CHO} \\quad \\ce{$A$ ->[\\ce{+H2O}] $B$}$')).should.not.include('data-mjx-error');
   });
 
-  it('ams tags load the ams package', () => {
-    mathjaxWithAmsTags('$$x=1$$').should.not.include('Unknown tags class');
+  it('require supports MathJax package append syntax', async () => {
+    (await mathjaxWithRequireObject('$\\require{enclose}\\enclose{circle}{x}$')).should.not.include('data-mjx-error');
   });
 
-  it('loads dynamic svg fonts', () => {
-    mathjax('$\\mathbb{R} \\quad \\mathcal{L}$').should.not.include('data-mjx-error');
+  it('packages load global extensions', async () => {
+    (await mathjaxWithPhysics('$\\qty(x)$')).should.not.include('Undefined control sequence');
   });
 
-  it('require respects extension options', () => {
-    mathjaxWithRequireNoPhysics('$\\require{physics}\\qty(x)$').should.include('not allowed');
+  it('ams tags load the ams package', async () => {
+    (await mathjaxWithAmsTags('$$x=1$$')).should.not.include('Unknown tags class');
   });
 
-  it('cjk', () => {
-    mathjax(`$$\\mu(n)=
+  it('loads dynamic svg fonts', async () => {
+    (await mathjax('$\\mathbb{R} \\quad \\mathcal{L}$')).should.not.include('data-mjx-error');
+  });
+
+  it('require respects extension options', async () => {
+    (await mathjaxWithRequireNoPhysics('$\\require{physics}\\qty(x)$')).should.include('not allowed');
+  });
+
+  it('cjk', async () => {
+    (await mathjax(`$$\\mu(n)=
 \\begin{cases}
 1 & n是偶数个不同的素数相乘\\\\
 -1 & n是奇数个不同的素数相乘\\\\
 0 & n被某个素数的平方整除
 \\end{cases}
-$$`).should.include('svg');
+$$`)).should.include('svg');
   });
 });

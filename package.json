@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/next-theme/hexo-filter-mathjax",
   "dependencies": {
+    "@mathjax/mathjax-mhchem-font-extension": "4.1.2",
     "@mathjax/src": "4.1.2"
   },
   "devDependencies": {
