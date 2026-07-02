@@ -1,6 +1,7 @@
 'use strict';
 
 require('chai').should();
+const { pathToFileURL } = require('node:url');
 
 const config = {
   tags             : 'none',
@@ -44,6 +45,7 @@ const mathjaxWithMacros = require('../lib/filter')(Object.assign({}, config, {
     }
   }
 }));
+const { requirePath } = require('../lib/filter');
 const content = '$E=mc^2$';
 const comment = '<!-- more -->';
 
@@ -51,6 +53,10 @@ describe('MathJax', () => {
 
   it('default', async () => {
     (await mathjax(content)).should.include('svg');
+  });
+
+  it('loads modules from file URLs', () => {
+    requirePath(pathToFileURL(require.resolve('../package.json')).href).name.should.equal('hexo-filter-mathjax');
   });
 
   it('comment', async () => {
