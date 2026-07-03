@@ -1,0 +1,32 @@
+name: Tester
+
+on: [push, pull_request]
+
+jobs:
+  tester:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v7
+      with:
+        repository: hexojs/hexo-starter
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '24'
+    - name: Install Dependencies
+      run: npm install
+    - uses: actions/checkout@v7
+      with:
+        path: hexo-filter-mathjax
+    - name: Install hexo-filter-mathjax
+      run: npm install ./hexo-filter-mathjax
+    - name: Prepare MathJax post
+      run: node hexo-filter-mathjax/test/e2e/setup-site.js
+    - name: Generate site
+      run: npx hexo generate
+    - name: Verify MathJax output
+      run: node hexo-filter-mathjax/test/e2e/verify-site.js
