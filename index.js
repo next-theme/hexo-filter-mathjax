@@ -24,10 +24,8 @@ hexo.extend.filter.register('after_post_render', async data => {
 if (config.append_css) {
   const css = require('./lib/css');
 
-  hexo.extend.filter.register('after_render:html', (html, { page }) => {
-    if (config.every_page || page.mathjax || (page.__index && page.posts.toArray().find(post => post.mathjax))) {
-      return html.replace(/<head>(?!<\/head>).+?<\/head>/s, str => str.replace('</head>', `<style>${css}</style></head>`));
-    }
-    return html;
+  // PJAX may replace only the page body, so keep the CSS in every page's unchanged <head>.
+  hexo.extend.filter.register('after_render:html', html => {
+    return html.replace(/<head>(?!<\/head>).+?<\/head>/s, str => str.replace('</head>', `<style>${css}</style></head>`));
   });
 }
