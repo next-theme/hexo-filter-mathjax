@@ -112,6 +112,18 @@ describe('MathJax', () => {
     (await mathjax('$\\mathbb{R} \\quad \\mathcal{L}$')).should.not.include('data-mjx-error');
   });
 
+  it('renders concurrent pages with shared output jax', async () => {
+    const output = await Promise.all([
+      mathjax('$\\mathbb{C}$'),
+      mathjax('$\\ce{H2O}$'),
+      mathjax('$\\color{blue}{x}$')
+    ]);
+    output.forEach(content => {
+      content.should.include('svg');
+      content.should.not.include('data-mjx-error');
+    });
+  });
+
   it('require respects extension options', async () => {
     (await mathjaxWithRequireNoPhysics('$\\require{physics}\\qty(x)$')).should.include('not allowed');
   });
